@@ -1,7 +1,6 @@
 pyvi
-IPython
-beautifulsoup4==4.8.1
+beautifulsoup4
 pandas
-requests==2.22.0
-scikit-learn==0.22
-sklearn==0.0
+requests
+scikit-learn
+sklearn

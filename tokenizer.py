@@ -17,18 +17,6 @@ class Tokenizer():
         return tokens
 
 
-    def __remove_links(self, text):
-        text = re.sub(r'https?:\/\/(www\.)?[-a-zA-Z0–9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0–9@:%_\+.~#?&//=]*)',
-                      '', text, flags=re.MULTILINE)
-        text = re.sub(r'[-a-zA-Z0–9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0–9@:%_\+.~#?&//=]*)', '', text,
-                      flags=re.MULTILINE)
-        return text
-
-
-    def __remove_img(self, text):
-        text = re.sub(r'img_[0-9a-fA-F-]+', '', text, flags=re.MULTILINE)
-        return text
-
 
     def __remove_html_tags(self, text):
         clean = re.compile('<.*?>')
