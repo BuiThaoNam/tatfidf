@@ -40,7 +40,7 @@ class Tatfidf():
         else:
             self.n = self.N
 
-        df = self.documents[['content', 'published_date', 'page_view', 'url']].head(self.n)
+        df = self.documents[['published_date', 'title',  'url', 'content',  'page_view']].head(self.n)
         df['time'] = pd.to_datetime(df['published_date'], format='%Y-%m-%d %H:%M:%S')
         df = df.set_index('time')
         self.data = df
@@ -228,7 +228,7 @@ class Tatfidf():
         for term in self.top_keywords:
             for index, vector in enumerate(self.copus_feature_matrix):
                 if term[0] in vector:
-                    documents.append([term[0], self.data.iloc[index].values.tolist()])
+                    documents.append(self.data.iloc[index].values.tolist()[:4])
         return documents
 
     def fit(self):

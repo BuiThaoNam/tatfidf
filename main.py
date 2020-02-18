@@ -8,7 +8,9 @@ def main():
     c = tatfidf.Tatfidf(df)
     c.init()
     c.fit()
-    pd.DataFrame(c.documents)
+    for document in c.top_documents:
+        print(document)
+
 
 
 
